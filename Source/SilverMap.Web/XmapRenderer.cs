@@ -143,7 +143,7 @@ namespace Ptvag.Dawn.SilverMap.Web
 
             var client = new XMapWSClient("XMapWSPort", this.url);
             ((XMapWSClient)client).ClientCredentials.UserName.UserName = "xtok";
-            ((XMapWSClient)client).ClientCredentials.UserName.Password = <insert your token here>;
+            ((XMapWSClient)client).ClientCredentials.UserName.Password = Ptvag.Dawn.SilverMap.Web.Properties.Settings.Default.Token; 
             var map = client.renderMapBoundingBox(boundingBox, mapParams, imageInfo, layers.ToArray(), true, callerContext);
 
             return new MemoryStream(map.image.rawImage);

@@ -39,7 +39,7 @@ namespace SilverMap.UseCases.GeoRSS
             map.ViewportWhileChanged += new EventHandler(map_ViewportWhileChanged);
 
             System.Net.WebRequest request = System.Net.WebRequest.Create(
-                 new Uri("http://earthquake.usgs.gov/earthquakes/catalogs/7day-M2.5.xml", UriKind.Absolute));
+                 new Uri("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom", UriKind.Absolute));
             request.BeginGetResponse(new AsyncCallback(CreateRssRequest), new object[] { request, this });
         }
 
@@ -70,6 +70,7 @@ namespace SilverMap.UseCases.GeoRSS
 
         private void ParseAtomUsingLinq(System.IO.Stream stream)
         {
+
             System.Xml.Linq.XDocument feedXML = System.Xml.Linq.XDocument.Load(stream);
             System.Xml.Linq.XNamespace xmlns = "http://www.w3.org/2005/Atom"; //Atom namespace
             System.Xml.Linq.XNamespace georssns = "http://www.georss.org/georss"; //GeoRSS Namespace
@@ -157,12 +158,19 @@ namespace SilverMap.UseCases.GeoRSS
 
         private double MagnitudeFromTitle(string title)
         {
-            string pattern = @"^M (?<number>[0-9].[0-9]),*";
+            try
+            {
+                string pattern = @"^M (?<number>[0-9].[0-9]),*";
 
-            Match numberMatch = Regex.Match(title, pattern);
-            string number = numberMatch.Groups["number"].Value;
+                Match numberMatch = Regex.Match(title, pattern);
+                string number = numberMatch.Groups["number"].Value;
 
-            return System.Convert.ToDouble(number, NumberFormatInfo.InvariantInfo);
+                return System.Convert.ToDouble(number, NumberFormatInfo.InvariantInfo);
+            }
+            catch (Exception ex)
+            {
+                return 0.1;
+            }
         }
 
         private System.Windows.Point CoordinateGeoRssPoint(System.Xml.Linq.XElement elm)

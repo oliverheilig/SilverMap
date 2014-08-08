@@ -84,7 +84,7 @@ namespace SilverMap
                 // how to get OOB-mode?
             }
 
-            buttonAbout.NavigateUri = new Uri(App.BaseUrl + "/XmapNetHandsOn.pdf");
+            buttonAbout.NavigateUri = new Uri("https://github.com/oliverheilig/SilverMap");
         }
 
         #region navigation buttons
@@ -352,7 +352,7 @@ namespace SilverMap
             {
                 case 0:
                     {
-                        // add xMap layers using ASP.NET
+                        // add xMap layers using an ASP.NET proxy
                         mapControl.LayerManager.Add(new BackgroundLayer
                         {
                             TileSource = new PtvDawnTileSource(App.BaseUrl + "/XmapBackgroundHandler.ashx") {  Mode = "bg"  },
@@ -363,9 +363,9 @@ namespace SilverMap
                     }
                 case 1:
                     {
-                        // add xServer internet layers
-                        mapControl.LayerManager.Add(new BackgroundLayer { TileSource = new XServerInternetTileSource("http://xmap-eu-n-test.cloud.ptvgroup.com"), Copyright = "© PTV, HERE" });
-                        mapControl.LayerManager.Add(new LabelLayer { OverlayProvider = new XServerInternetTileOverlay("http://xmap-eu-n-test.cloud.ptvgroup.com", <insert your token here>), Copyright = "© PTV, HERE" });
+                        // using xServer internet directly requires the client appilcation also running at https!
+                        mapControl.LayerManager.Add(new BackgroundLayer { TileSource = new XServerInternetTileSource("https://xmap-eu-n-test.cloud.ptvgroup.com"), Copyright = "© PTV, HERE" });
+                        mapControl.LayerManager.Add(new LabelLayer { OverlayProvider = new XServerInternetTileOverlay("https://xmap-eu-n-test.cloud.ptvgroup.com", "<insert your token here>"), Copyright = "© PTV, HERE" });
                         break;
                     }
                 case 2:

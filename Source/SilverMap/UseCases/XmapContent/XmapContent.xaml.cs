@@ -156,7 +156,8 @@ namespace SilverMap.UseCases.XmapContent
             using (var scope = new OperationContextScope(((XMapWSClient)xMapWSClient).InnerChannel))
             {
                 var prop = new HttpRequestMessageProperty();
-                prop.Headers["Authorization"] = "Basic " + Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("xtok:" + <insert your token here>));
+                // in case of xserver internet direct access
+                // prop.Headers["Authorization"] = "Basic " + Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("xtok:" + <insert your token here>));
 
                 OperationContext context = OperationContext.Current;
                 context.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = prop;
