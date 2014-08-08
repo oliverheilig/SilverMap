@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f7b7228e-5ac9-4c80-8da6-1223811cf5c1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59874/DistrictFeatureService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DistrictFeatureService.xsd" MetadataType="Schema" ID="a53dbc1a-5dfa-4f7b-b7c8-108890fa7c1d" SourceId="1" SourceUrl="http://localhost:59874/DistrictFeatureService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DistrictFeatureService1.xsd" MetadataType="Schema" ID="d07df371-f25f-45bf-9f50-2e3682181630" SourceId="1" SourceUrl="http://localhost:59874/DistrictFeatureService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DistrictFeatureService2.xsd" MetadataType="Schema" ID="17a7ac1f-450e-4d87-a547-d3f2ad164538" SourceId="1" SourceUrl="http://localhost:59874/DistrictFeatureService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DistrictFeatureService.disco" MetadataType="Disco" ID="35100de8-8a88-4a30-aa65-b0fe08df4f35" SourceId="1" SourceUrl="http://localhost:59874/DistrictFeatureService.svc?disco" />
+    <MetadataFile FileName="DistrictFeatureService.wsdl" MetadataType="Wsdl" ID="74d50a08-7323-456e-8588-1d93466ebfed" SourceId="1" SourceUrl="http://localhost:59874/DistrictFeatureService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

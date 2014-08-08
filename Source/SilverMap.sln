@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverMap", "SilverMap\SilverMap.csproj", "{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF} = {A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverMap.Web", "SilverMap.Web\SilverMap.Web.csproj", "{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverMap.Core", "SilverMap.Core\SilverMap.Core.csproj", "{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverMap.Symbols", "SilverMap.Symbols\SilverMap.Symbols.csproj", "{57947C5E-3E0D-44D6-857A-A46D43396577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DeployOnDemoServer|Any CPU = DeployOnDemoServer|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.DeployOnDemoServer|Any CPU.ActiveCfg = DeployOnDemoServer|Any CPU
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.DeployOnDemoServer|Any CPU.Build.0 = DeployOnDemoServer|Any CPU
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.DeployOnDemoServer|Any CPU.ActiveCfg = DeployOnDemoServer|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.DeployOnDemoServer|Any CPU.Build.0 = DeployOnDemoServer|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F0C78C-E57E-4ACE-B777-38701B8AB1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.DeployOnDemoServer|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.DeployOnDemoServer|Any CPU.Build.0 = Release|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.DeployOnDemoServer|Any CPU.ActiveCfg = Debug|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.DeployOnDemoServer|Any CPU.Build.0 = Debug|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57947C5E-3E0D-44D6-857A-A46D43396577}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

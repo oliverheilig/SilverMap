@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{014CBF8C-440D-4FBD-8B8F-0F7E06215CDE}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverMap</RootNamespace>
+    <AssemblyName>SilverMap</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SupportedCultures>en;de</SupportedCultures>
+    <SilverlightApplication>true</SilverlightApplication>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SilverMap.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SilverMap.App</SilverlightAppEntry>
+    <TestPageFileName>SilverMapTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+    <InBrowserSettingsFile>Properties\InBrowserSettings.xml</InBrowserSettingsFile>
+    <RequireInBrowserElevation>true</RequireInBrowserElevation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DeployOnDemoServer|AnyCPU'">
+    <OutputPath>bin\DeployOnDemoServer\</OutputPath>
+    <DefineConstants>TRACE;DeployOnDemoServer</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI">
+      <HintPath>..\..\Lib\SL\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="NetTopologySuite">
+      <HintPath>..\..\Lib\SL\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Data.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.BubbleCreme">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.BubbleCreme.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.BureauBlue">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.BureauBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.ExpressionDark">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.ExpressionDark.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.ExpressionLight">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.ExpressionLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.ShinyBlue">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.ShinyBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.ShinyRed">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.ShinyRed.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Theming.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.TwilightBlue">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.TwilightBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Theming.WhistlerBlue">
+      <HintPath>..\..\Lib\SL\Themes\System.Windows.Controls.Theming.WhistlerBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals">
+      <HintPath>..\..\Lib\SL\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DistrictFeatureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XlocateService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XmapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\XrouteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ColorBlend.cs" />
+    <Compile Include="UseCases\Routing\RoutePolygonLayer.cs" />
+    <Compile Include="UseCases\Routing\RouteStationsLayer.cs" />
+    <Compile Include="UseCases\Routing\RoutingControl.xaml.cs">
+      <DependentUpon>RoutingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseCases\SharpMap\SharpMapUseCase.cs" />
+    <Compile Include="UseCases\WMS\WmsUseCase.cs" />
+    <Compile Include="UseCases\WMS\WmsLayer.cs" />
+    <Compile Include="UseCases\Geocoding\GeocodeDemo.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseCases\Geocoding\GeocodingControl.xaml.cs">
+      <DependentUpon>GeocodingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseCases\GeoRss\GeoRssDemo.cs" />
+    <Compile Include="UseCases\GeoXaml\GeoXamlDemo.cs" />
+    <Compile Include="UseCases\HowTos\ForePaneElements.cs" />
+    <Compile Include="UseCases\HowTos\SimpleShapeDemo.cs" />
+    <Compile Include="UseCases\SharpMap\Legend.xaml.cs">
+      <DependentUpon>Legend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseCases\SharpMap\Ogc2Xaml.cs" />
+    <Compile Include="UseCases\SharpMap\SelectInteractor.cs" />
+    <Compile Include="UseCases\SharpMap\SharpMapLayer.cs" />
+    <Compile Include="UseCases\XmapContent\XmapContent.xaml.cs">
+      <DependentUpon>XmapContent.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UseCases\Routing\RoutingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UseCases\SharpMap\Legend.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UseCases\XmapContent\XmapContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="Service References\DistrictFeatureService\DistrictFeatureService.wsdl" />
+    <None Include="Service References\DistrictFeatureService\DistrictFeatureService.xsd" />
+    <None Include="Service References\DistrictFeatureService\DistrictFeatureService1.xsd" />
+    <None Include="Service References\DistrictFeatureService\DistrictFeatureService2.xsd" />
+    <None Include="Service References\DistrictFeatureService\SilverMap.DistrictFeatureService.DistrictFeature.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XmapService\SilverMap.XmapService.renderMapBoundingBoxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XmapService\SilverMap.XmapService.renderMapResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XmapService\SilverMap.XmapService.renderMapRotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XmapService\XMapWSService.wsdl" />
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateExtendedRouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateIsochronesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateMatrixInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateReachableObjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateRouteInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateRouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.calculateTourResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\SilverMap.XrouteService.searchForReachableObjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XrouteService\XRouteWSService.wsdl" />
+    <None Include="Properties\DataSources\SilverMap.XlocateService.Address.datasource" />
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findAddressesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findPoiByAddressesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findPoiByAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findPoiByLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.findPoiByLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.matchAddressesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.matchAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.matchLocationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\SilverMap.XlocateService.matchLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\XlocateService\XLocateWSService.wsdl" />
+    <Page Include="UseCases\Geocoding\GeocodingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\XlocateService\configuration91.svcinfo" />
+    <None Include="Service References\XlocateService\configuration.svcinfo" />
+    <None Include="Service References\XlocateService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\XrouteService\configuration91.svcinfo" />
+    <None Include="Service References\XrouteService\configuration.svcinfo" />
+    <None Include="Service References\XrouteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\XmapService\configuration91.svcinfo" />
+    <None Include="Service References\XmapService\configuration.svcinfo" />
+    <None Include="Service References\XmapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DistrictFeatureService\DistrictFeatureService.disco" />
+    <None Include="Service References\DistrictFeatureService\configuration91.svcinfo" />
+    <None Include="Service References\DistrictFeatureService\configuration.svcinfo" />
+    <None Include="Service References\DistrictFeatureService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\MapMarket.png" />
+    <Resource Include="Resources\ln2000.png" />
+    <Resource Include="Resources\BaWue.png" />
+    <None Include="Properties\InBrowserSettings.xml" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MapPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SilverMap.Core\SilverMap.Core.csproj">
+      <Project>{FFE5AF0B-BF8D-45FC-93D8-53ABDE95C7D1}</Project>
+      <Name>SilverMap.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverMap.Symbols\SilverMap.Symbols.csproj">
+      <Project>{57947C5E-3E0D-44D6-857A-A46D43396577}</Project>
+      <Name>SilverMap.Symbols</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="IconDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DistrictFeatureService\" />
+    <WCFMetadataStorage Include="Service References\XlocateService\" />
+    <WCFMetadataStorage Include="Service References\XmapService\" />
+    <WCFMetadataStorage Include="Service References\XrouteService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

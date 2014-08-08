@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet xMapServer Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.ie.css" /><![endif]-->
+    <style>
+        body
+        {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map
+        {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+    </div>
+    <script src="http://leaflet.cloudmade.com/dist/leaflet.js"></script>
+    <script>
+        var map = new L.Map('map', { crs: L.CRS.EPSG900913 });
+        map.setView(new L.LatLng(51, 10), 6);
+
+        var xMapWmsUrl = 'http://80.146.239.180/WMS/WMS';
+
+        var backgound = new L.TileLayer.WMS(xMapWmsUrl, {
+            layers: 'xmap-ajaxbg',
+            format: 'image/png',
+            transparent: false,
+            attribution: "PTV AG, NAVTEQ"
+        });
+
+        map.addLayer(backgound);
+
+        mapMarketUrl = 'SharpMapTilesHandler.ashx?x={x}&y={y}&z={z}',
+	    postcode = new L.TileLayer(mapMarketUrl, { maxZoom: 18, attribution: 'DDS', opacity: 0.75 });
+        map.addLayer(postcode);
+
+        updateLabels();
+        map.on('moveend', function (e) { updateLabels() });
+
+        var labelOverlay;
+        function updateLabels() {
+            if (labelOverlay)
+                map.removeLayer(labelOverlay);
+
+            var wgsBounds = map.getBounds();
+
+            var p1 = latLonToWebMercator(wgsBounds.getNorthWest());
+            var p2 = latLonToWebMercator(wgsBounds.getSouthEast());
+            var s = map.getSize();
+
+            labelOverlay = new L.ImageOverlay(xMapWmsUrl +
+                '?service=WMS&request=GetMap&version=1.1.1&layers=xmap-ajaxfg&styles=' +
+                '&format=image/png&transparent=true&srs=EPSG:900913' +
+                '&height=' + s.y + '&width=' + s.x + '&bbox=' + p1.x + ',' + p2.y + ',' + p2.x + ',' + p1.y,
+                 wgsBounds);
+            map.addLayer(labelOverlay);
+        }
+
+        function latLonToWebMercator(loc) {
+            var x = 6378137.0 * loc.lng * Math.PI / 180.0;
+            var y = 6378137.0 * Math.log(Math.tan(Math.PI / 4.0 + loc.lat * Math.PI / 360.0));
+
+            return new L.Point(x, y);
+        }
+    </script>
+</body>
+</html>

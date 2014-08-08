@@ -1,0 +1,76 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="SilverMap.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:silvermap="clr-namespace:Ptvag.Dawn.Controls.SilverMap.Core;assembly=Ptvag.Dawn.Controls.SilverMap.Core"
+    xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+    mc:Ignorable="d" Loaded="UserControl_Loaded" d:DesignHeight="600" d:DesignWidth="800">
+    <Grid x:Name="LayoutRoot">
+        <silvermap:MapControl x:Name="mapControl" />
+        <layoutToolkit:Accordion  ExpandDirection="Down" Opacity=".8" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10, 10, 25, 10" >
+            <layoutToolkit:AccordionItem Header="Legend">
+                <StackPanel x:Name="UseCasePanel" />
+            </layoutToolkit:AccordionItem>
+        </layoutToolkit:Accordion>
+        <layoutToolkit:Accordion Opacity=".8" SelectionMode="ZeroOrMore"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10">
+            <layoutToolkit:AccordionItem IsSelected="True" Header="Silverlight Demo">
+                <StackPanel Margin="8, 8, 8, 8">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Grid.Row="0" Content="+" Name="button1" Click="button1_Click" />
+                        <Button Grid.Column="2" Grid.Row="0" Content="-" Name="button2" Click="button2_Click" />
+                        <Button Grid.Column="1" Grid.Row="0" Content="^" Name="buttonUp" Click="button3_Click" />
+                        <Button Grid.Column="2" Grid.Row="1" Content=">" Name="buttonRight" Click="buttonRight_Click" />
+                        <Button Grid.Column="0" Grid.Row="1" Content="&lt;" Name="buttonLeft" Click="buttonLeft_Click" />
+                        <Button Grid.Column="1" Grid.Row="1" Content="v" Name="buttonDown" Click="buttonDown_Click" />
+                    </Grid>
+                    <TextBlock Margin="0,4,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" MaxWidth="157" Text="Press 'M' for magnifier. Hold 'Shift' to drag a zoom box." />
+                    <HyperlinkButton HorizontalAlignment="Right" Margin="0,0,0,4" Content="About..." Name="buttonAbout" />
+                    <StackPanel>
+                        <CheckBox Content="Transitions" IsChecked="True" Name="animationChaeckBox" Checked="animationChaeckBox_Checked" Unchecked="animationChaeckBox_Unchecked" />
+                        <CheckBox Content="Full Screen" Name="fullScreenCheckBox" Checked="fullScreenCheckBox_Checked" Unchecked="fullScreenCheckBox_Unchecked" />
+                        <CheckBox Content="Projection" Name="checkBox1" Checked="checkBox1_Checked" Unchecked="checkBox1_Unchecked"/>
+                        <Button x:FieldModifier="public" Content="Switch Theme" Name="button3" />
+                    </StackPanel>
+                </StackPanel>
+            </layoutToolkit:AccordionItem>
+            <layoutToolkit:AccordionItem IsSelected="True" Header="Use Cases">
+                <StackPanel Margin="8, 8, 8, 8">
+                    <StackPanel>
+                        <CheckBox Content="Simple Shape" Unchecked="checkBox2_Unchecked" Checked="checkBox2_Checked" IsChecked="False" />
+                        <CheckBox Content="Fore Pane Elements" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" IsChecked="False" />
+                        <CheckBox Content="Map&amp;Market Xaml" IsChecked="False" Name="checkBox3" Unchecked="checkBox3_Unchecked" Checked="checkBox3_Checked" />
+                        <CheckBox Content="Map&amp;Market OpenGIS" IsChecked="False" Name="checkBox9" Checked="checkBox9_Checked" Unchecked="checkBox9_Unchecked"/>
+                        <CheckBox Content="WMS" IsChecked="False" Name="checkBox10" Checked="checkBox10_Checked" Unchecked="checkBox10_Unchecked"/>
+                        <CheckBox Content="GeoRSS" IsChecked="False" Name="checkBox4" Checked="checkBox4_Checked" Unchecked="checkBox4_Unchecked"/>
+                        <CheckBox Content="xMap Content" IsChecked="False" Name="checkBox8" Checked="checkBox8_Checked" Unchecked="checkBox8_Unchecked"/>
+                        <CheckBox Content="xLocate" IsChecked="False" Name="checkBox6" Checked="checkBox6_Checked" Unchecked="checkBox6_Unchecked"/>
+                        <CheckBox Content="xRoute" IsChecked="False" Name="checkBox7" Checked="checkBox7_Checked" Unchecked="checkBox7_Unchecked"/>
+                    </StackPanel>
+                </StackPanel>
+            </layoutToolkit:AccordionItem>
+            <layoutToolkit:AccordionItem Header="Base Map">
+                <StackPanel Margin="8, 8, 8, 8">
+                    <RadioButton IsChecked="True" Content="xMap" Checked="RadioButton_Checked_1" />
+                    <RadioButton Visibility="Collapsed" Content="xMap via ajaxmaps" Checked="RadioButton_Checked_2" />
+                    <RadioButton Content="Aerials" Checked="RadioButton_Checked_3" />
+                    <RadioButton Content="Hybrid 1" Checked="RadioButton_Checked_4" />
+                    <RadioButton Content="Hybrid 2" Checked="RadioButton_Checked_5" />
+                    <RadioButton Content="OSM" Checked="RadioButton_Checked_6" />
+                    <RadioButton Content="Nokia Road" Checked="RadioButton_Checked_7" />
+                    <RadioButton Content="Nokia Satellite" Checked="RadioButton_Checked_8" />
+                    <RadioButton Content="Nokia Terrain" Checked="RadioButton_Checked_9" />
+                </StackPanel>
+            </layoutToolkit:AccordionItem>
+        </layoutToolkit:Accordion>
+    </Grid>
+</UserControl>

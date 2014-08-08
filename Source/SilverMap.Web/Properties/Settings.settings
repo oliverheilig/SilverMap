@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Ptvag.Dawn.SilverMap.Web.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MapCluster" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">eu-n-test</Value>
+    </Setting>
+    <Setting Name="Token" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;insert your token here&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

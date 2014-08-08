@@ -1,0 +1,36 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="XLocateWSBinding" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="XRouteWSBinding" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                  <security mode="Transport" />
+                </binding>
+                <binding name="XMapWSBinding" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="BasicHttpBinding_IDistrictFeatureService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://80.146.239.180/xlocate/ws/XLocate"
+                binding="basicHttpBinding" bindingConfiguration="XLocateWSBinding"
+                contract="XlocateService.XLocateWS" name="XLocateWSPort" />
+            <endpoint address="https://xroute-eu-n-test.cloud.ptvgroup.com/xroute/ws/XRoute"
+                binding="basicHttpBinding" bindingConfiguration="XRouteWSBinding"
+                contract="XrouteService.XRouteWS" name="XRouteWSPort" />
+            <endpoint address="https://xmap-eu-n-test.cloud.ptvgroup.com/xmap/ws/XMap" binding="basicHttpBinding"
+                bindingConfiguration="XMapWSBinding" contract="XmapService.XMapWS"
+                name="XMapWSPort" />
+            <endpoint address="http://localhost:59874/DistrictFeatureService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDistrictFeatureService"
+                contract="DistrictFeatureService.IDistrictFeatureService"
+                name="BasicHttpBinding_IDistrictFeatureService" />
+        </client>
+    </system.serviceModel>
+</configuration>
